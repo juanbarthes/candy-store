@@ -1,0 +1,34 @@
+<table class="table text-center">
+  <thead class="bg-primary">
+    <tr>
+      <th></th>
+      <th scope="col">Golosina</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let candy of candies">
+      <th><img class="img-thumbnail" width="200" [src]="candy.image" [alt]="candy.name"></th>
+      <td>{{candy.name}}</td>
+      <td>{{candy.price | currency}}</td>
+      <td *ngIf="candy.stock == 0; else elseBlock"><span class="badge badge-danger">Sin Stock</span></td>
+      <ng-template #elseBlock>
+        <td><span class="badge badge-success">En Stock</span></td>
+        <td class>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button class="btn btn-primary btn-sm" (click)="downQuantity(candy)">-</button>
+            </div>
+            <input type="text" class="col-5 text-center" [(ngModel)]="candy.quantity"
+              (keyup)="changeQuantity($event, candy)">
+            <div class="input-group-append">
+              <button class="btn btn-primary btn-sm" (click)="upQuantity(candy)">+</button>
+            </div>
+          </div>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>
