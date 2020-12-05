@@ -8,7 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
 import { CandiesComponent } from './candies/candies.component';
 import { AboutComponent } from './about/about.component';
-import { CartComponent } from './cart/cart.component'
+import { CartComponent } from './cart/cart.component';
+import { QuantityInputComponent } from './quantity-input/quantity-input.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CartComponent } from './cart/cart.component'
     ContactComponent,
     CandiesComponent,
     AboutComponent,
-    CartComponent
+    CartComponent,
+    QuantityInputComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,7 @@
 <h3>Carrito de Compras</h3>
+<ul>
+    <li *ngFor="let candy of (shopList$ | async)">
+        x{{candy.quantity}} {{candy.name}} {{candy.price * candy.quantity |currency}}
+    </li>
+    <li>Total: {{this.getTotal()}}</li>
+</ul>

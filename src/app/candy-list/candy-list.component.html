@@ -6,6 +6,7 @@
       <th scope="col">Precio</th>
       <th scope="col">Stock</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -16,17 +17,11 @@
       <td *ngIf="candy.stock == 0; else elseBlock"><span class="badge badge-danger">Sin Stock</span></td>
       <ng-template #elseBlock>
         <td><span class="badge badge-success">En Stock</span></td>
-        <td class>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <button class="btn btn-primary btn-sm" (click)="downQuantity(candy)">-</button>
-            </div>
-            <input type="text" class="col-5 text-center" [(ngModel)]="candy.quantity"
-              (keyup)="changeQuantity($event, candy)">
-            <div class="input-group-append">
-              <button class="btn btn-primary btn-sm" (click)="upQuantity(candy)">+</button>
-            </div>
-          </div>
+        <td>
+          <app-quantity-input [(quantity)]="candy.quantity" [max]="candy.stock"></app-quantity-input>
+        </td>
+        <td>         
+           <button class="btn-success btn-sm" (click)="addToCart(candy)">Comprar</button>
         </td>
       </ng-template>
     </tr>
