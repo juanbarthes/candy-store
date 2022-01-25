@@ -1,5 +1,9 @@
 # CandyShop
 
+Just an single-page aplication with a list of items, a shopping cart, an about section and a contact section.
+
+App deployed in Stackblitz: https://candy-store.stackblitz.io/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
 ## Development server
